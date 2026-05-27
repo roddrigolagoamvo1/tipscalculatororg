@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator — Split Bills & Calculate Tips Instantly</title>
+  <meta name="description" content="Free tip calculator: enter your bill, choose a tip percentage, and split among any number of people. Instant results — no signup, no ads blocking your result.">
+  <meta name="keywords" content="tip calculator, tip calculator free, bill split calculator, how much to tip, restaurant tip calculator, gratuity calculator">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tipscalculator.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tip Calculator — Split Bills Instantly">
+  <meta property="og:description" content="Calculate the perfect tip and split the bill in seconds. Free, fast, no signup required.">
+  <meta property="og:url" content="https://tipscalculator.org/">
+  <meta property="og:site_name" content="TipsCalculator.org">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tip Calculator — Split Bills Instantly">
+  <meta name="twitter:description" content="Free online tip calculator. Works on any device, no signup needed.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Tip Calculator","url":"https://tipscalculator.org/","description":"Free online tip calculator. Enter bill amount, tip percentage and number of people to instantly calculate tip per person and total per person.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much should I tip at a restaurant?","acceptedAnswer":{"@type":"Answer","text":"In the United States, the standard restaurant tip is 15% for adequate service, 18% for good service, and 20% for excellent service. For exceptional service, 25% or more is appreciated."}},{"@type":"Question","name":"How do I calculate a 20% tip?","acceptedAnswer":{"@type":"Answer","text":"To calculate a 20% tip manually, divide the bill amount by 5. For example, on a $45 bill: $45 divided by 5 equals a $9 tip."}},{"@type":"Question","name":"Should I tip on the pre-tax or post-tax amount?","acceptedAnswer":{"@type":"Answer","text":"Etiquette experts recommend tipping on the pre-tax amount. In practice, most people tip on the total bill (post-tax), which is perfectly acceptable."}},{"@type":"Question","name":"How much do you tip a taxi or rideshare driver?","acceptedAnswer":{"@type":"Answer","text":"For taxis and rideshare services like Uber and Lyft, 10-15% is standard. Tip 15-20% for great service or help with heavy luggage."}},{"@type":"Question","name":"How do I split the tip with friends?","acceptedAnswer":{"@type":"Answer","text":"Use the Number of People field in our tip calculator. It automatically calculates the tip per person and the total each person should pay."}},{"@type":"Question","name":"How much should I tip a hotel housekeeper?","acceptedAnswer":{"@type":"Answer","text":"The standard is $2-$5 per night, left daily. For luxury hotels or longer stays, $5 per night is recommended."}}]}</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--green:#1B3D2F;--green-mid:#2A5C44;--green-light:#D6EAD7;--gold:#C9A84C;--gold-light:#FBF3DF;--bg:#F7F4EE;--surface:#FFFFFF;--ink:#1A1A18;--ink-2:#5A5750;--ink-3:#A09C95;--border:rgba(26,26,24,.08);--shadow-sm:0 1px 3px rgba(0,0,0,.05),0 2px 8px rgba(0,0,0,.04);--shadow-md:0 4px 20px rgba(0,0,0,.06),0 1px 4px rgba(0,0,0,.04);--r-sm:10px;--r-md:18px;--r-lg:26px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+    .ad-wrap{background:var(--surface);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;color:var(--ink-3);font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+    .ad-leader{width:100%;min-height:90px;border-left:none;border-right:none;border-top:none}
+    .ad-leader-foot{width:100%;min-height:90px;border-left:none;border-right:none;border-bottom:none}
+    .ad-rect{min-height:280px;border-radius:var(--r-md);width:336px}
+    .ad-half{width:300px;min-height:600px;border-radius:var(--r-md);flex-shrink:0}
+    .page-wrap{flex:1;display:flex;gap:32px;max-width:1100px;margin:0 auto;padding:52px 24px 64px;width:100%;align-items:flex-start}
+    .main-col{flex:1;min-width:0}
+    .side-col{flex-shrink:0;position:sticky;top:28px}
+    .site-header{margin-bottom:44px}
+    .header-badge{display:inline-flex;align-items:center;gap:6px;background:var(--green-light);color:var(--green);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:99px;margin-bottom:18px}
+    .header-badge::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5.5vw,62px);line-height:1.05;letter-spacing:-.02em;color:var(--ink);margin-bottom:14px}
+    h1 em{font-style:italic;color:var(--green-mid)}
+    .header-sub{font-size:16px;color:var(--ink-2);font-weight:300;max-width:480px;line-height:1.7}
+    .calc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:36px;box-shadow:var(--shadow-md);margin-bottom:28px}
+    .tip-presets{display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap}
+    .preset-btn{flex:1;min-width:64px;padding:10px 8px;border:1.5px solid var(--border);border-radius:var(--r-sm);background:var(--bg);color:var(--ink-2);font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .18s;text-align:center}
+    .preset-btn:hover{border-color:var(--green-mid);color:var(--green-mid);background:var(--green-light)}
+    .preset-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
+    .preset-btn .pct{font-size:16px;font-weight:600;display:block}
+    .preset-btn .lbl{font-size:10px;color:inherit;opacity:.7;display:block;margin-top:1px}
+    .preset-btn.active .lbl{opacity:.6}
+    .inputs-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:28px}
+    .field{display:flex;flex-direction:column;gap:8px}
+    .field label{font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3)}
+    .input-box{display:flex;align-items:center;background:var(--bg);border:1.5px solid transparent;border-radius:var(--r-sm);overflow:hidden;transition:border-color .18s}
+    .input-box:focus-within{border-color:var(--green-mid);background:#fff}
+    .input-prefix,.input-suffix{padding:0 13px;font-size:16px;color:var(--ink-3);font-weight:500;flex-shrink:0;user-select:none}
+    .input-box input{flex:1;border:none;background:transparent;font-family:'Playfair Display',serif;font-size:28px;color:var(--ink);padding:13px 8px;outline:none;min-width:0;width:100%}
+    .input-box select{flex:1;border:none;background:transparent;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:300;color:var(--ink);padding:14px 16px;outline:none;cursor:pointer}
+    .tip-slider-wrap{margin-top:6px}
+    input[type="range"]{-webkit-appearance:none;width:100%;height:4px;border-radius:99px;background:var(--border);outline:none;cursor:pointer;accent-color:var(--green)}
+    input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--green);border:3px solid #fff;box-shadow:0 0 0 1.5px var(--green);cursor:pointer;transition:transform .15s}
+    input[type="range"]::-webkit-slider-thumb:hover{transform:scale(1.15)}
+    .calc-btn{width:100%;padding:17px;background:var(--green);color:#fff;border:none;border-radius:var(--r-sm);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:600;letter-spacing:.03em;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+    .calc-btn::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.07) 0%,transparent 60%)}
+    .calc-btn:hover{background:var(--green-mid);transform:translateY(-1px);box-shadow:0 6px 20px rgba(27,61,47,.3)}
+    .calc-btn:active{transform:translateY(0);box-shadow:none}
+    .result-card{background:var(--green);border-radius:var(--r-lg);padding:36px;margin-bottom:28px;display:none;animation:popIn .4s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+    .result-card::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.04)}
+    .result-card::after{content:'';position:absolute;bottom:-80px;left:-40px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.03)}
+    .result-card.show{display:block}
+    @keyframes popIn{from{opacity:0;transform:scale(.97) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+    .result-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;position:relative;z-index:1}
+    .result-item{padding:0 20px}
+    .result-item:first-child{padding-left:0}
+    .result-item:last-child{padding-right:0}
+    .result-item+.result-item{border-left:1px solid rgba(255,255,255,.15)}
+    .r-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:8px}
+    .r-value{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);color:#fff;line-height:1;margin-bottom:4px}
+    .r-sub{font-size:12px;color:rgba(255,255,255,.45)}
+    .ad-mid-wrap{display:flex;justify-content:center;margin-bottom:28px}
+    .content-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:36px;margin-bottom:24px;box-shadow:var(--shadow-sm)}
+    h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--ink);margin-bottom:16px;letter-spacing:-.01em;line-height:1.2}
+    .prose p{font-size:15px;color:var(--ink-2);line-height:1.78;font-weight:300;margin-bottom:14px}
+    .prose p:last-child{margin-bottom:0}
+    .prose p strong{color:var(--ink);font-weight:500}
+    .tip-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:20px}
+    .tip-table thead th{text-align:left;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:600;padding:10px 16px;border-bottom:1px solid var(--border)}
+    .tip-table tbody td{padding:13px 16px;border-bottom:1px solid var(--border);font-weight:300;color:var(--ink-2);vertical-align:top}
+    .tip-table tbody tr:last-child td{border-bottom:none}
+    .tip-table tbody tr:hover td{background:var(--bg)}
+    .tip-table .venue{font-weight:500;color:var(--ink)}
+    .tip-table .pct-cell{color:var(--green-mid);font-weight:600}
+    .formula-box{background:var(--gold-light);border:1px solid rgba(201,168,76,.25);border-radius:var(--r-md);padding:20px 24px;margin:20px 0;display:flex;align-items:center;gap:14px}
+    .formula-icon{font-size:28px;flex-shrink:0}
+    .formula-text{font-size:14px;color:var(--ink-2);line-height:1.6}
+    .formula-text strong{color:var(--ink)}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-item:last-child{border-bottom:none}
+    .faq-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 0;background:none;border:none;cursor:pointer;text-align:left;gap:12px;font-family:'Plus Jakarta Sans',sans-serif}
+    .faq-q{font-size:15px;font-weight:500;color:var(--ink);line-height:1.4}
+    .faq-icon{width:22px;height:22px;border-radius:50%;background:var(--bg);border:1px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--ink-2);transition:all .2s}
+    .faq-btn[aria-expanded="true"] .faq-icon{background:var(--green);color:#fff;border-color:var(--green);transform:rotate(45deg)}
+    .faq-answer{display:none;padding:0 0 18px;font-size:14px;color:var(--ink-2);line-height:1.75;font-weight:300}
+    .faq-answer.open{display:block}
+    footer{background:var(--surface);border-top:1px solid var(--border);padding:24px;text-align:center}
+    .footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:10px}
+    footer a{font-size:13px;color:var(--ink-3);text-decoration:none;transition:color .15s}
+    footer a:hover{color:var(--green-mid)}
+    .footer-note{font-size:12px;color:var(--ink-3);line-height:1.6;max-width:600px;margin:0 auto}
+    @media(max-width:820px){.side-col{display:none}.page-wrap{padding:32px 16px 48px}}
+    @media(max-width:600px){.inputs-grid{grid-template-columns:1fr}.result-grid{grid-template-columns:1fr;gap:20px}.result-item+.result-item{border-left:none;border-top:1px solid rgba(255,255,255,.15);padding:20px 0 0}.result-item{padding:0}.calc-card,.content-card{padding:22px 18px}.tip-presets{gap:6px}}
+  </style>
+</head>
+<body>
+
+  <!-- AD SLOT 1: Topo 728x90 -->
+  <div class="ad-wrap ad-leader">
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <div class="page-wrap">
+    <main class="main-col">
+
+      <header class="site-header">
+        <div class="header-badge">Free Online Tool</div>
+        <h1>Tip <em>Calculator</em><br>&amp; Bill Splitter</h1>
+        <p class="header-sub">Enter your bill, pick a tip percentage, and instantly see how much everyone pays. No math, no hassle — works on any device.</p>
+      </header>
+
+      <!-- CALCULADORA -->
+      <section class="calc-card" aria-label="Tip calculator">
+        <div class="tip-presets" role="group" aria-label="Quick tip percentages">
+          <button class="preset-btn" data-pct="10" onclick="setPreset(10,this)"><span class="pct">10%</span><span class="lbl">Basic</span></button>
+          <button class="preset-btn" data-pct="15" onclick="setPreset(15,this)"><span class="pct">15%</span><span class="lbl">Standard</span></button>
+          <button class="preset-btn active" data-pct="18" onclick="setPreset(18,this)"><span class="pct">18%</span><span class="lbl">Good</span></button>
+          <button class="preset-btn" data-pct="20" onclick="setPreset(20,this)"><span class="pct">20%</span><span class="lbl">Great</span></button>
+          <button class="preset-btn" data-pct="25" onclick="setPreset(25,this)"><span class="pct">25%</span><span class="lbl">Excellent</span></button>
+        </div>
+        <div class="inputs-grid">
+          <div class="field">
+            <label for="bill">Bill Amount</label>
+            <div class="input-box">
+              <span class="input-prefix">$</span>
+              <input type="number" id="bill" placeholder="0.00" min="0" step="0.01" inputmode="decimal" oninput="liveCalc()" aria-label="Bill amount">
+            </div>
+          </div>
+          <div class="field">
+            <label for="tip-pct">Tip Percentage</label>
+            <div class="input-box">
+              <input type="number" id="tip-pct" value="18" min="0" max="100" step="1" inputmode="decimal" oninput="syncSlider();clearPresets();liveCalc()" aria-label="Tip percentage">
+              <span class="input-suffix">%</span>
+            </div>
+            <div class="tip-slider-wrap">
+              <input type="range" id="tip-slider" min="0" max="50" value="18" step="1" oninput="syncPct();liveCalc()" aria-label="Tip percentage slider">
+            </div>
+          </div>
+          <div class="field">
+            <label for="people">Number of People</label>
+            <div class="input-box">
+              <input type="number" id="people" value="1" min="1" max="100" step="1" inputmode="numeric" oninput="liveCalc()" aria-label="Number of people splitting the bill">
+            </div>
+          </div>
+          <div class="field">
+            <label for="rounding">Rounding</label>
+            <div class="input-box">
+              <select id="rounding" onchange="liveCalc()" aria-label="Rounding option">
+                <option value="none">No rounding</option>
+                <option value="up">Round up</option>
+                <option value="nearest">Round to nearest $1</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button class="calc-btn" onclick="calculate()">Calculate Tip →</button>
+      </section>
+
+      <!-- RESULTADO -->
+      <section class="result-card" id="result-card" aria-live="polite">
+        <div class="result-grid">
+          <div class="result-item">
+            <div class="r-label">Tip Amount</div>
+            <div class="r-value" id="r-tip">$0.00</div>
+            <div class="r-sub" id="r-tip-sub">per table</div>
+          </div>
+          <div class="result-item">
+            <div class="r-label">Total Bill</div>
+            <div class="r-value" id="r-total">$0.00</div>
+            <div class="r-sub" id="r-total-sub">bill + tip</div>
+          </div>
+          <div class="result-item">
+            <div class="r-label">Per Person</div>
+            <div class="r-value" id="r-person">$0.00</div>
+            <div class="r-sub" id="r-person-sub">each pays</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AD SLOT 2: Meio 336x280 -->
+      <div class="ad-mid-wrap">
+        <div class="ad-wrap ad-rect">
+          <ins class="adsbygoogle" style="display:block;width:336px;height:280px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="2222222222"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+      </div>
+
+      <!-- CONTEÚDO SEO: Tabela de gorjetas -->
+      <article class="content-card">
+        <h2>Tip Guide: How Much to Tip in Every Situation</h2>
+        <div class="prose">
+          <p>Knowing how much to tip can feel complicated — percentages vary by country, service type, and the quality of your experience. This guide covers every common tipping situation so you always leave the right amount.</p>
+        </div>
+        <table class="tip-table" aria-label="Tipping guide by service type">
+          <thead><tr><th>Service</th><th>Standard Tip</th><th>Exceptional</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td class="venue">Restaurant (sit-down)</td><td class="pct-cell">18 – 20%</td><td class="pct-cell">25%+</td><td>Tip on the pre-tax amount</td></tr>
+            <tr><td class="venue">Café / Counter service</td><td class="pct-cell">10 – 15%</td><td class="pct-cell">20%</td><td>Optional but appreciated</td></tr>
+            <tr><td class="venue">Food delivery</td><td class="pct-cell">15 – 20%</td><td class="pct-cell">$5 minimum</td><td>Tip the driver, not the app</td></tr>
+            <tr><td class="venue">Taxi / Rideshare</td><td class="pct-cell">10 – 15%</td><td class="pct-cell">20%</td><td>More for luggage help</td></tr>
+            <tr><td class="venue">Hotel housekeeper</td><td class="pct-cell">$2 – $5 / night</td><td class="pct-cell">$5 – $10</td><td>Leave daily, not at checkout</td></tr>
+            <tr><td class="venue">Hair salon / Barber</td><td class="pct-cell">15 – 20%</td><td class="pct-cell">25%</td><td>Tip your stylist directly</td></tr>
+            <tr><td class="venue">Spa / Massage</td><td class="pct-cell">15 – 20%</td><td class="pct-cell">25%</td><td>Check if gratuity is included</td></tr>
+            <tr><td class="venue">Bartender</td><td class="pct-cell">$1 – $2 / drink</td><td class="pct-cell">20% of tab</td><td>At least $1 for simple drinks</td></tr>
+            <tr><td class="venue">Tour guide</td><td class="pct-cell">$5 – $10 / person</td><td class="pct-cell">$15 – $20</td><td>Per day for extended tours</td></tr>
+            <tr><td class="venue">Valet parking</td><td class="pct-cell">$2 – $5</td><td class="pct-cell">$10</td><td>Tip when you pick up the car</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <!-- CONTEÚDO SEO: Métodos de cálculo -->
+      <article class="content-card">
+        <h2>How to Calculate a Tip — 3 Simple Methods</h2>
+        <div class="prose">
+          <p>While our tip calculator handles the math instantly, it helps to understand the formula. Here are three ways to calculate a tip by hand when you don't have your phone handy.</p>
+        </div>
+        <div class="formula-box">
+          <div class="formula-icon">🧮</div>
+          <div class="formula-text">
+            <strong>The Standard Formula</strong><br>
+            Tip = Bill Amount × (Tip % ÷ 100)<br>
+            Total = Bill Amount + Tip<br>
+            Per Person = Total ÷ Number of People
+          </div>
+        </div>
+        <div class="prose">
+          <p><strong>Method 1 — The 10% trick:</strong> Find 10% of the bill by moving the decimal one place left. On a $68 bill, 10% = $6.80. Double it for 20% ($13.60), or add half for 15% ($10.20).</p>
+          <p><strong>Method 2 — Divide by 5:</strong> Dividing the bill by 5 gives exactly 20%. Quick mental math: $75 ÷ 5 = $15 tip.</p>
+          <p><strong>Method 3 — Round up the total:</strong> Add a tip that makes the total a round number. On a $43.50 bill, rounding to $52 gives approximately 19.5% — clean and easy.</p>
+        </div>
+      </article>
+
+      <!-- CONTEÚDO SEO: FAQ -->
+      <article class="content-card">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-q">How much should I tip at a restaurant?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">In the United States, the standard restaurant tip is 15% for adequate service, 18% for good service, and 20% for excellent service. For truly exceptional service, 25% or more is appreciated. Many diners now default to 18–20% as a baseline. Outside the US, tipping customs vary widely — in Japan tipping is considered rude, while in Europe 10% is typically sufficient.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-q">How do I calculate a 20% tip quickly?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">The fastest method: divide the bill by 5. On a $45 bill, $45 ÷ 5 = $9 tip, making your total $54. Alternatively, find 10% (move the decimal left) and double it. For $45: 10% = $4.50, doubled = $9.00. Or simply use our tip calculator above — enter the bill and hit the "20%" preset button.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-q">Should I tip on the pre-tax or post-tax amount?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">Etiquette experts recommend tipping on the pre-tax amount, since the quality of service has nothing to do with your tax rate. In practice, most people tip on the total bill (post-tax) — it is simpler and the difference on a typical bill is only $1–2. Either approach is widely accepted.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-q">How much do I tip a taxi or Uber driver?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">For taxis and rideshare services (Uber, Lyft, Bolt), 10–15% is the standard for a typical ride. Tip 15–20% for great service, help with heavy luggage, or a particularly clean vehicle. For very short trips under $5, a flat $1–2 tip is appropriate. You can tip in cash or through the app after the ride.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-q">How do I split the bill and tip fairly between friends?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">Use the "Number of People" field in our calculator. It divides both the tip and the total evenly among everyone. If friends ordered different amounts, calculate the full table tip first (e.g., 20% of the total bill), then divide by the number of diners to find each person's tip contribution — add that to each person's individual food amount.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-q">Is tipping required by law?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">No, tipping is never legally required in any country. However, in the United States especially, many service workers — particularly restaurant servers — earn below minimum wage with the expectation that tips make up the difference. Some restaurants add an automatic gratuity (usually 18–20%) for large parties of 6 or more; always check your bill before adding extra.</div>
+          </div>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- AD SLOT 3: Lateral 300x600 -->
+    <aside class="side-col" aria-label="Advertisement">
+      <div class="ad-wrap ad-half">
+        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="3333333333"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </aside>
+  </div>
+
+  <!-- AD SLOT 4: Rodapé 728x90 -->
+  <div class="ad-wrap ad-leader-foot">
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="4444444444"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <footer>
+    <nav class="footer-links">
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/about.html">About</a>
+      <a href="mailto:contact@tipscalculator.org">Contact</a>
+    </nav>
+    <p class="footer-note">
+      TipsCalculator.org is a free tool for informational purposes only. Tipping customs vary by country, region, and establishment. Always check whether gratuity is already included in your bill.
+      © <span id="yr"></span> tipscalculator.org — All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    function syncSlider(){
+      const v=parseFloat(document.getElementById('tip-pct').value)||0;
+      document.getElementById('tip-slider').value=Math.min(v,50);
+    }
+    function syncPct(){
+      document.getElementById('tip-pct').value=document.getElementById('tip-slider').value;
+      clearPresets();
+    }
+    function setPreset(pct,btn){
+      document.querySelectorAll('.preset-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tip-pct').value=pct;
+      document.getElementById('tip-slider').value=pct;
+      liveCalc();
+    }
+    function clearPresets(){
+      document.querySelectorAll('.preset-btn').forEach(b=>b.classList.remove('active'));
+    }
+    function fmt(n){return '$'+n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+
+    function calculate(){
+      const bill=parseFloat(document.getElementById('bill').value)||0;
+      const pct=parseFloat(document.getElementById('tip-pct').value)||0;
+      const people=parseInt(document.getElementById('people').value)||1;
+      const round=document.getElementById('rounding').value;
+      if(bill<=0){document.getElementById('bill').focus();return;}
+      let tip=bill*(pct/100);
+      let total=bill+tip;
+      if(round==='up'){total=Math.ceil(total);tip=total-bill;}
+      else if(round==='nearest'){total=Math.round(total);tip=total-bill;}
+      const perPerson=total/people;
+      const tipPer=tip/people;
+      document.getElementById('r-tip').textContent=fmt(tip);
+      document.getElementById('r-tip-sub').textContent=people>1?fmt(tipPer)+' per person':'full table';
+      document.getElementById('r-total').textContent=fmt(total);
+      document.getElementById('r-total-sub').textContent='at '+pct+'% tip';
+      document.getElementById('r-person').textContent=fmt(perPerson);
+      document.getElementById('r-person-sub').textContent=people>1?people+' people split':'just you';
+      const card=document.getElementById('result-card');
+      card.classList.remove('show');
+      void card.offsetWidth;
+      card.classList.add('show');
+      card.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+
+    function liveCalc(){
+      if((parseFloat(document.getElementById('bill').value)||0)>0) calculate();
+    }
+
+    function toggleFaq(btn){
+      const expanded=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',!expanded);
+      btn.nextElementSibling.classList.toggle('open',!expanded);
+    }
+
+    document.querySelectorAll('input').forEach(el=>{
+      el.addEventListener('keydown',e=>{if(e.key==='Enter')calculate();});
+    });
+  </script>
+</body>
+</html>
