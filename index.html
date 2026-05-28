@@ -84,13 +84,16 @@
     .prose p{font-size:15px;color:var(--ink-2);line-height:1.78;font-weight:300;margin-bottom:14px}
     .prose p:last-child{margin-bottom:0}
     .prose p strong{color:var(--ink);font-weight:500}
-    .tip-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:20px}
-    .tip-table thead th{text-align:left;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:600;padding:10px 16px;border-bottom:1px solid var(--border)}
+    .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:20px;border-radius:var(--r-sm);border:1px solid var(--border)}
+    .table-scroll-hint{font-size:11px;color:var(--ink-3);text-align:right;margin-top:6px;display:none}
+    @media(max-width:600px){.table-scroll-hint{display:block}}
+    .tip-table{width:100%;border-collapse:collapse;font-size:14px;min-width:480px}
+    .tip-table thead th{text-align:left;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:600;padding:10px 16px;border-bottom:1px solid var(--border);white-space:nowrap;background:var(--bg)}
     .tip-table tbody td{padding:13px 16px;border-bottom:1px solid var(--border);font-weight:300;color:var(--ink-2);vertical-align:top}
     .tip-table tbody tr:last-child td{border-bottom:none}
     .tip-table tbody tr:hover td{background:var(--bg)}
-    .tip-table .venue{font-weight:500;color:var(--ink)}
-    .tip-table .pct-cell{color:var(--green-mid);font-weight:600}
+    .tip-table .venue{font-weight:500;color:var(--ink);white-space:nowrap}
+    .tip-table .pct-cell{color:var(--green-mid);font-weight:600;white-space:nowrap}
     .formula-box{background:var(--gold-light);border:1px solid rgba(201,168,76,.25);border-radius:var(--r-md);padding:20px 24px;margin:20px 0;display:flex;align-items:center;gap:14px}
     .formula-icon{font-size:28px;flex-shrink:0}
     .formula-text{font-size:14px;color:var(--ink-2);line-height:1.6}
@@ -211,21 +214,24 @@
         <div class="prose">
           <p>Knowing how much to tip can feel complicated — percentages vary by country, service type, and the quality of your experience. This guide covers every common tipping situation so you always leave the right amount.</p>
         </div>
-        <table class="tip-table" aria-label="Tipping guide by service type">
-          <thead><tr><th>Service</th><th>Standard Tip</th><th>Exceptional</th><th>Notes</th></tr></thead>
-          <tbody>
-            <tr><td class="venue">Restaurant (sit-down)</td><td class="pct-cell">18 – 20%</td><td class="pct-cell">25%+</td><td>Tip on the pre-tax amount</td></tr>
-            <tr><td class="venue">Café / Counter service</td><td class="pct-cell">10 – 15%</td><td class="pct-cell">20%</td><td>Optional but appreciated</td></tr>
-            <tr><td class="venue">Food delivery</td><td class="pct-cell">15 – 20%</td><td class="pct-cell">$5 minimum</td><td>Tip the driver, not the app</td></tr>
-            <tr><td class="venue">Taxi / Rideshare</td><td class="pct-cell">10 – 15%</td><td class="pct-cell">20%</td><td>More for luggage help</td></tr>
-            <tr><td class="venue">Hotel housekeeper</td><td class="pct-cell">$2 – $5 / night</td><td class="pct-cell">$5 – $10</td><td>Leave daily, not at checkout</td></tr>
-            <tr><td class="venue">Hair salon / Barber</td><td class="pct-cell">15 – 20%</td><td class="pct-cell">25%</td><td>Tip your stylist directly</td></tr>
-            <tr><td class="venue">Spa / Massage</td><td class="pct-cell">15 – 20%</td><td class="pct-cell">25%</td><td>Check if gratuity is included</td></tr>
-            <tr><td class="venue">Bartender</td><td class="pct-cell">$1 – $2 / drink</td><td class="pct-cell">20% of tab</td><td>At least $1 for simple drinks</td></tr>
-            <tr><td class="venue">Tour guide</td><td class="pct-cell">$5 – $10 / person</td><td class="pct-cell">$15 – $20</td><td>Per day for extended tours</td></tr>
-            <tr><td class="venue">Valet parking</td><td class="pct-cell">$2 – $5</td><td class="pct-cell">$10</td><td>Tip when you pick up the car</td></tr>
-          </tbody>
-        </table>
+        <div class="table-scroll">
+          <table class="tip-table" aria-label="Tipping guide by service type">
+            <thead><tr><th>Service</th><th>Standard Tip</th><th>Exceptional</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td class="venue">Restaurant (sit-down)</td><td class="pct-cell">18 – 20%</td><td class="pct-cell">25%+</td><td>Tip on the pre-tax amount</td></tr>
+              <tr><td class="venue">Café / Counter service</td><td class="pct-cell">10 – 15%</td><td class="pct-cell">20%</td><td>Optional but appreciated</td></tr>
+              <tr><td class="venue">Food delivery</td><td class="pct-cell">15 – 20%</td><td class="pct-cell">$5 minimum</td><td>Tip the driver, not the app</td></tr>
+              <tr><td class="venue">Taxi / Rideshare</td><td class="pct-cell">10 – 15%</td><td class="pct-cell">20%</td><td>More for luggage help</td></tr>
+              <tr><td class="venue">Hotel housekeeper</td><td class="pct-cell">$2 – $5 / night</td><td class="pct-cell">$5 – $10</td><td>Leave daily, not at checkout</td></tr>
+              <tr><td class="venue">Hair salon / Barber</td><td class="pct-cell">15 – 20%</td><td class="pct-cell">25%</td><td>Tip your stylist directly</td></tr>
+              <tr><td class="venue">Spa / Massage</td><td class="pct-cell">15 – 20%</td><td class="pct-cell">25%</td><td>Check if gratuity is included</td></tr>
+              <tr><td class="venue">Bartender</td><td class="pct-cell">$1 – $2 / drink</td><td class="pct-cell">20% of tab</td><td>At least $1 for simple drinks</td></tr>
+              <tr><td class="venue">Tour guide</td><td class="pct-cell">$5 – $10 / person</td><td class="pct-cell">$15 – $20</td><td>Per day for extended tours</td></tr>
+              <tr><td class="venue">Valet parking</td><td class="pct-cell">$2 – $5</td><td class="pct-cell">$10</td><td>Tip when you pick up the car</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-scroll-hint">← Swipe left to see more →</p>
       </article>
 
       <!-- CONTEÚDO SEO: Métodos de cálculo -->
@@ -351,7 +357,7 @@
     }
     function fmt(n){return '$'+n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
 
-    function calculate(){
+    function calculate(noScroll){
       const bill=parseFloat(document.getElementById('bill').value)||0;
       const pct=parseFloat(document.getElementById('tip-pct').value)||0;
       const people=parseInt(document.getElementById('people').value)||1;
@@ -373,11 +379,11 @@
       card.classList.remove('show');
       void card.offsetWidth;
       card.classList.add('show');
-      card.scrollIntoView({behavior:'smooth',block:'nearest'});
+      if(!noScroll) card.scrollIntoView({behavior:'smooth',block:'nearest'});
     }
 
     function liveCalc(){
-      if((parseFloat(document.getElementById('bill').value)||0)>0) calculate();
+      if((parseFloat(document.getElementById('bill').value)||0)>0) calculate(true);
     }
 
     function toggleFaq(btn){
